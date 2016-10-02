@@ -1,5 +1,4 @@
 System.config({
-  baseURL: "/",
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
@@ -18,16 +17,20 @@ System.config({
     "angular-animate": "github:angular/bower-angular-animate@1.5.8",
     "angular-formly": "github:formly-js/angular-formly@8.4.0",
     "angular-formly-material": "npm:angular-formly-material@0.14.3",
+    "angular-google-maps": "github:angular-ui/angular-google-maps@2.4.0",
     "angular-material": "github:angular/bower-material@1.1.1",
     "angular-messages": "github:angular/bower-angular-messages@1.5.8",
+    "angular-simple-logger": "npm:angular-simple-logger@0.1.7",
     "api-check": "npm:api-check@7.5.5",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.7",
-    "css": "github:systemjs/plugin-css@0.1.29",
+    "css": "github:systemjs/plugin-css@0.1.30",
     "jquery": "npm:jquery@3.1.1",
+    "lodash": "github:lodash/lodash@4.16.2",
+    "lodash/lodash": "github:lodash/lodash@4.16.2",
+    "ngeo": "npm:ngeo@2.1.0-dev.18",
     "pubnub": "npm:pubnub@4.0.11",
-    "tombatossals/angular-openlayers-directive": "github:tombatossals/angular-openlayers-directive@1.16.0",
     "github:angular/bower-angular-animate@1.5.8": {
       "angular": "github:angular/bower-angular@1.5.8"
     },
@@ -41,7 +44,7 @@ System.config({
       "angular": "github:angular/bower-angular@1.5.8",
       "angular-animate": "github:angular/bower-angular-animate@1.5.8",
       "angular-aria": "github:angular/bower-angular-aria@1.5.8",
-      "css": "github:systemjs/plugin-css@0.1.29"
+      "css": "github:systemjs/plugin-css@0.1.30"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
@@ -117,7 +120,11 @@ System.config({
       "angular-animate": "github:angular/bower-angular-animate@1.5.8",
       "angular-aria": "github:angular/bower-angular-aria@1.5.8",
       "angular-messages": "github:angular/bower-angular-messages@1.5.8",
-      "css": "github:systemjs/plugin-css@0.1.29"
+      "css": "github:systemjs/plugin-css@0.1.30"
+    },
+    "npm:angular-simple-logger@0.1.7": {
+      "angular": "npm:angular@1.5.8",
+      "debug": "npm:debug@2.2.0"
     },
     "npm:asn1.js@4.8.1": {
       "bn.js": "npm:bn.js@4.11.6",
@@ -349,6 +356,16 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+    },
+    "npm:ngeo@2.1.0-dev.18": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "child_process": "github:jspm/nodelibs-child_process@0.1.0",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.2",
+      "url": "github:jspm/nodelibs-url@0.1.0"
     },
     "npm:os-browserify@0.1.2": {
       "os": "github:jspm/nodelibs-os@0.1.0"

@@ -1,7 +1,10 @@
+/* global angular */
 import "angular/angular-csp.css!";
 import "angular-material/angular-material.css!";
 
-import "jquery";
+import _ from 'lodash'
+import $ from 'jquery'
+
 import "angular";
 import "angular-material";
 import "angular-messages";
@@ -9,6 +12,9 @@ import "angular-animate";
 import "api-check";
 import "angular-formly";
 import "angular-formly-material";
+
+import "angular-simple-logger";
+import "angular-google-maps";
 
 import app from 'app';
 

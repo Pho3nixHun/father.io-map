@@ -28,7 +28,10 @@ app.get('/api', function (req, res, next) {
     next();
 });
 
-var server = app.listen(3000, function () {
+let port = process.env.PORT || 3000;
+let host = process.env.IP || '0.0.0.0';
+
+var server = app.listen(port, function () {
 
   var host = server.address().address;
   var port = server.address().port;

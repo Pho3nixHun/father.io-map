@@ -9,6 +9,19 @@
     <script src="jspm_packages/system.js"></script>
     <script src="jspm.config.js"></script>
     <script> setTimeout(() => {System.import('main');},0) </script>
+    <style type="text/css">
+        #map_canvas {
+            position: relative;
+        }
+
+        .angular-google-map-container {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,8 +36,18 @@
         <div class="sk-cube sk-cube8"></div>
         <div class="sk-cube sk-cube9"></div>
     </div>
-    <div class="index" ng-controller="indexCtrl" ng-cloak>
-        <h1>{{title}}</h1>
+    <div class="index" ng-controller="indexCtrl" ng-cloak layout="column" layout-fill>
+        <md-button ng-click="debug = !debug">Set debug to {{!debug}}</md-button>
+        <div id="map_canvas" flex md-whiteframe="3" layout-margin flex>
+            <ui-gmap-google-map center="map.center" zoom="map.zoom" options="map.options" control="map.control"></ui-gmap-google-map>
+        </div>
+        </ui-gmap-google-map>
+        <div layout="row" ng-show="debug">
+            <div layout="column" layout-padding layout-margin md-whiteframe="3" ng-repeat="(key, value) in this" flex ng-show="value" ng-if="showInDebug(key)" style="overflow: auto">
+                <h3> {{key}} </h3>
+                <pre flex>{{value | json}}</pre>
+            </div>
+        </div>
     </div>
 </body>
 

@@ -1,3 +1,6 @@
+/* SOURCE: https://github.com/tobiasahlin/SpinKit */
+/* TODO: create two phase with different color share-out*/
+
 .sk-cube-grid {
     width: 60px;
     height: 60px;
@@ -21,22 +24,26 @@
           animation-delay: 0.2s; }
 .sk-cube-grid .sk-cube2 {
   -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s; }
+          animation-delay: 0.3s;
+         background-color: #9EB83B; }
 .sk-cube-grid .sk-cube3 {
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s; }
 .sk-cube-grid .sk-cube4 {
   -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s; }
+          animation-delay: 0.1s; 
+         background-color: #9EB83B; }
 .sk-cube-grid .sk-cube5 {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s; }
 .sk-cube-grid .sk-cube6 {
   -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s; }
+          animation-delay: 0.3s;
+         background-color: #9EB83B; }
 .sk-cube-grid .sk-cube7 {
   -webkit-animation-delay: 0s;
-          animation-delay: 0s; }
+          animation-delay: 0s;
+         background-color: #9EB83B; }
 .sk-cube-grid .sk-cube8 {
   -webkit-animation-delay: 0.1s;
           animation-delay: 0.1s; }
