@@ -31,6 +31,7 @@ System.config({
     "lodash/lodash": "github:lodash/lodash@4.16.2",
     "ngeo": "npm:ngeo@2.1.0-dev.18",
     "pubnub": "npm:pubnub@4.0.11",
+    "quadkey": "npm:quadkey@0.0.1",
     "github:angular/bower-angular-animate@1.5.8": {
       "angular": "github:angular/bower-angular@1.5.8"
     },

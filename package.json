@@ -41,7 +41,8 @@
       "lodash": "github:lodash/lodash@^4.16.2",
       "lodash/lodash": "github:lodash/lodash@^4.16.2",
       "ngeo": "npm:ngeo@^2.1.0-dev.18",
-      "pubnub": "npm:pubnub@^4.0.11"
+      "pubnub": "npm:pubnub@^4.0.11",
+      "quadkey": "npm:quadkey@^0.0.1"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",

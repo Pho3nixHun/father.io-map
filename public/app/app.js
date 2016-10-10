@@ -1,6 +1,9 @@
 'use strict';
 /* global angular, navigator */
 import PubNub from "pubnub";
+import quadkey from 'quadkey';
+import CoordMapType from '/app/CoordMapType';
+
 const googleMapsApiKey = "AIzaSyBNg6CzjbTDOU2lWlEIC-aM7th_E1ivhSc";
 const app = angular
     .module('father-io-map', [
@@ -16,8 +19,7 @@ const app = angular
         });
     })
     .controller('indexCtrl', 
-    ['$scope', function($scope){
-        console.log($scope);
+    ['$scope', 'uiGmapGoogleMapApi', function($scope, uiGmapGoogleMapApi){
         $scope.map = {
             center: {
                 latitude:47,
@@ -29,19 +31,25 @@ const app = angular
             },
             control: {}
         };
-        (function(locationApi){
-            if (locationApi) {
-                return locationApi.getCurrentPosition((loc)=>{
-                    $scope.map.center = {
-                        latitude: loc.coords.latitude,
-                        longitude: loc.coords.longitude
-                    }
-                    $scope.map.control.refresh($scope.map.center);
-                });
-            } else {
-                return $scope.location = {error: "Geolocation is not supported by this browser."};
-            }
-        })(navigator.geolocation);
+        uiGmapGoogleMapApi.then(function(maps) {
+            (function(locationApi){
+                if (locationApi) {
+                    return locationApi.getCurrentPosition((loc)=>{
+                        $scope.map.center = {
+                            latitude: loc.coords.latitude,
+                            longitude: loc.coords.longitude
+                        }
+                        $scope.map.control.refresh($scope.map.center);
+                        
+                        let map = $scope.map.control.getGMap();
+                        console.log($scope, quadkey, map);
+                        map.overlayMapTypes.insertAt(0, new CoordMapType(new maps.Size(256, 256)));
+                    });
+                } else {
+                    return $scope.location = {error: "Geolocation is not supported by this browser."};
+                }
+            })(navigator.geolocation);
+        });
         $scope.messages = null;
         $scope.time = null;
         $scope.presence = null;
@@ -82,7 +90,7 @@ const app = angular
                 if (msg.lon && msg.lat) { 
                     $scope.map.center.latitude = msg.lat;
                     $scope.map.center.longitude = msg.lon;
-                    $scope.map.zoom = 18;
+                    //$scope.map.zoom = 19;
                 }
                 $scope.message = m;
                 $scope.$apply();
